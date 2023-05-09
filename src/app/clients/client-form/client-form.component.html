@@ -1,33 +1,25 @@
-<h2>Add a new Client</h2>
-<div class="clientForm">
-  <form [formGroup]="clientForm" (ngSubmit)="onSave()">
+<mat-card class="client">
+  <mat-card-header>Add New Client</mat-card-header>
+  <form [formGroup]="clientForm" class="client-form" (ngSubmit)="onSave()">
+    <mat-form-field>
+      <input matInput type="text" name="firstnameTxt" formControlName="firstName" placeholder="First Name..." required/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" name="lastnameTxt" formControlName="lastName" placeholder="Last Name..." required/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="email" name="emailTxt" formControlName="email" placeholder="Email..." required/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="tel" name="telephoneTxt" formControlName="telephone" placeholder="Telephone..."/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" name="companyTxt" formControlName="company"  placeholder="Company..." required/>
+    </mat-form-field>
     <p>
-      <label>First Name</label>
-      <input type="text" name="firstnameTxt" formControlName="firstName" required/>
-    </p>
-
-    <p>
-      <label>Last Name</label>
-      <input type="text" name="lastnameTxt" formControlName="lastName" required/>
-    </p>
-
-    <p>
-      <label>Email</label>
-      <input type="email" name="emailTxt" formControlName="email" required/>
-    </p>
-
-    <p>
-      <label>Telephone</label>
-      <input type="tel" name="telephoneTxt" formControlName="telephone" />
-    </p>
-
-    <p>
-      <label>Company</label>
-      <input type="text" name="companyTxt" formControlName="company" required/>
-    </p>
-
-    <p>
-      <button type="submit" [disabled]="!clientForm.valid">Save</button>
+      <button mat-raised-button type="submit" color="primary" [disabled]="!clientForm.valid">
+        Save
+      </button>
     </p>
   </form>
-</div>
+</mat-card>

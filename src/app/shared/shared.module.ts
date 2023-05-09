@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core'
-import { SearchFormComponent } from '../search/search-form/search-form.component';
 import { FormsModule } from '@angular/forms';
+
+import { CustomMaterialModule } from '../custom-material.module';
+import { SearchFormComponent } from '../search/search-form/search-form.component';
 
 @NgModule({
     declarations: [
@@ -9,7 +11,8 @@ import { FormsModule } from '@angular/forms';
     ],
     imports: [
       CommonModule,
-      FormsModule
+      FormsModule,
+      CustomMaterialModule
     ],
     exports: [
       SearchFormComponent
