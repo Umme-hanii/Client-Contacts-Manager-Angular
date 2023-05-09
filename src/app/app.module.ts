@@ -7,16 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientModule } from './clients/client.module';
 import { CompanyModule } from './company/company.module';
-import { ClientPageComponent } from './clients/client-page/client-page.component';
-import { SearchFormComponent } from './search/search-form/search-form.component';
-import { ClientFormComponent } from './clients/client-form/client-form.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientPageComponent,
-    SearchFormComponent,
-    ClientFormComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +20,8 @@ import { ClientFormComponent } from './clients/client-form/client-form.component
     FormsModule,
     ReactiveFormsModule,
     ClientModule,
-    CompanyModule
+    CompanyModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
