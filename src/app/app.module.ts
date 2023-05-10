@@ -10,6 +10,7 @@ import { ClientModule } from './clients/client.module';
 import { CompanyModule } from './company/company.module';
 import { SharedModule } from './shared/shared.module';
 import { CustomMaterialModule } from './custom-material.module';
+import { AboutModule } from './about/about.module';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -29,7 +30,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     ClientModule,
     CompanyModule,
     SharedModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    AboutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
