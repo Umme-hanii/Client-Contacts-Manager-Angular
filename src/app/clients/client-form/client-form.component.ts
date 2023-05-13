@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output} from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
+
+import { Client } from '../client';
 
 @Component({
   selector: 'app-client-form',
@@ -9,6 +11,8 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 export class ClientFormComponent {
   //new FormGroup is defined here
   clientForm: FormGroup;
+
+  @Output() saveClientEvent: EventEmitter<Client> = new EventEmitter()
 
   //Creating new FormControls with Validation
   firstName = new FormControl('', Validators.required)
@@ -30,7 +34,21 @@ export class ClientFormComponent {
     })
   }
 
-  onSave() {
-    console.log(this.clientForm)
+  saveClient() {
+    this.saveClientEvent.emit(this.createClient(this.clientForm))
   }
+
+  private createClient(form: FormGroup) {
+    const clientObject: Client = {
+      firstName: form.value.firstName,
+      lastName: form.value.lastName,
+      email: form.value.email,
+      telephoneNumber: form.value.telephoneNumber,
+      companyName: form.value.companyName
+    }
+
+    return clientObject
+  }
+
+  
 }

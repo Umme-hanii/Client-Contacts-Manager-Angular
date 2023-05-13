@@ -7,6 +7,7 @@ import { CustomMaterialModule } from '../custom-material.module';
 
 import { ClientFormComponent } from './client-form/client-form.component';
 import { ClientPageComponent } from './client-page/client-page.component';
+import { ClientService } from './client.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,9 @@ import { ClientPageComponent } from './client-page/client-page.component';
     ReactiveFormsModule,
     SharedModule,
     CustomMaterialModule
+  ],
+  providers: [
+    ClientService
   ]
 })
 export class ClientModule { }

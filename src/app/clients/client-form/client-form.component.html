@@ -1,25 +1,27 @@
 <mat-card class="client">
   <mat-card-header>Add New Client</mat-card-header>
-  <form [formGroup]="clientForm" class="client-form" (ngSubmit)="onSave()">
-    <mat-form-field>
-      <input matInput type="text" name="firstnameTxt" formControlName="firstName" placeholder="First Name..." required/>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" name="lastnameTxt" formControlName="lastName" placeholder="Last Name..." required/>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="email" name="emailTxt" formControlName="email" placeholder="Email..." required/>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="tel" name="telephoneTxt" formControlName="telephone" placeholder="Telephone..."/>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" name="companyTxt" formControlName="company"  placeholder="Company..." required/>
-    </mat-form-field>
-    <p>
+  <form [formGroup]="clientForm" class="client-form" (ngSubmit)="saveClient()">
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput type="text" name="firstnameTxt" formControlName="firstName" placeholder="First Name..." required/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="lastnameTxt" formControlName="lastName" placeholder="Last Name..." required/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="email" name="emailTxt" formControlName="email" placeholder="Email..." required/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="tel" name="telephoneTxt" formControlName="telephone" placeholder="Telephone..."/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="companyTxt" formControlName="company"  placeholder="Company..." required/>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-footer>
       <button mat-raised-button type="submit" color="primary" [disabled]="!clientForm.valid">
         Save
       </button>
-    </p>
+    </mat-card-footer>
   </form>
 </mat-card>
