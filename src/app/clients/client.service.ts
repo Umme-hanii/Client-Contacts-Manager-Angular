@@ -18,7 +18,7 @@ export class ClientService {
   }
 
   //get client by id
-  getClientById(clientId: string): any {
+  getClientById(clientId: string | null): any {
     const url = `${this.clientAPIUrl}/${clientId}`
     return this.httpClient.get(url)
   }
@@ -30,7 +30,7 @@ export class ClientService {
   }
 
   //archive a client
-  deleteClient(clientId: string) {
+  deleteClient(clientId: string | undefined) {
     const url = `${this.clientAPIUrl}/${clientId}`
     return this.httpClient.delete(url)
   }

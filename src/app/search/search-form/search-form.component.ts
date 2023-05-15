@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-form',
@@ -6,10 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-form.component.scss']
 })
 export class SearchFormComponent {
-  searchField = ''
+  searchField: string = ''
+
+  @Input()
+  title!: string
+
+  @Output()
+  searchEvent: EventEmitter<string> = new EventEmitter()
 
   onSubmit() {
-    console.log(this.searchField)
+    this.searchEvent.emit(this.searchField)
   }
 
 }

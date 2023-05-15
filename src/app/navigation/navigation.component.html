@@ -2,8 +2,8 @@
   <p>{{ title }}</p>
   <button mat-button [matMenuTriggerFor]="clientMenu">Clients</button>
   <mat-menu #clientMenu="matMenu">
-    <button mat-menu-item (click)="goTo('clients')">Add New Client</button>
-    <button mat-menu-item>View All</button>
+    <button mat-menu-item (click)="goTo('clients/search')">Client Search</button>
+    <button mat-menu-item (click)="goTo('clients/new')">Add New Client</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="companyMenu">Company</button>
